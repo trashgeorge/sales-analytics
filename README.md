@@ -53,7 +53,6 @@ sales-analytics/
 ├── docs/
 │   └── diagrama_er.png
 ├── 00_reset_completo.sql
-├── 01_create_database.sql
 ├── 03_insert_clientes.sql
 ├── 04_insert_produtos.sql
 ├── 05_insert_funcionarios.sql
@@ -67,7 +66,6 @@ sales-analytics/
 | Arquivo | Descrição |
 |---|---|
 | `00_reset_completo.sql` | Apaga e recria o banco do zero (estrutura completa) |
-| `01_create_database.sql` | Criação isolada da estrutura (tabelas, índices, constraints) |
 | `03_insert_clientes.sql` | Inserção dos clientes |
 | `04_insert_produtos.sql` | Inserção do catálogo de produtos |
 | `05_insert_funcionarios.sql` | Inserção dos funcionários |
@@ -143,6 +141,34 @@ HAVING ABS(p.valor_total - valor_calculado) > 0.01;
 
 ---
 
+## ✅ Resultados em ação
+
+Prints reais executados no MySQL Workbench, direto sobre a base populada.
+
+### Verificação de consistência — 0 linhas retornadas
+
+Prova de que **todos os 500 pedidos** têm `valor_total` batendo exatamente com a soma dos itens vendidos.
+
+![Verificação de consistência](docs/verificacao_consistencia.png)
+
+### Top 10 produtos mais vendidos
+
+![Top produtos mais vendidos](docs/top_produtos.png)
+
+### Faturamento por categoria
+
+![Faturamento por categoria](docs/faturamento_categoria.png)
+
+### Faturamento por vendedor
+
+![Faturamento por vendedor](docs/faturamento_vendedor.png)
+
+### Faturamento mensal (série temporal)
+
+![Faturamento mensal](docs/faturamento_mensal.png)
+
+---
+
 ## 🔜 Roadmap
 
 - [x] Modelagem do banco de dados relacional
@@ -155,5 +181,5 @@ HAVING ABS(p.valor_total - valor_calculado) > 0.01;
 
 ## 👤 Autor
 
-**Seu Nome Aqui**
-[LinkedIn](#) · [GitHub](#)
+**Jorge Lucas Cruz**
+[https://www.linkedin.com/in/jorgelucas22/](#) · [https://github.com/trashgeorge/sales-analytics](#)
